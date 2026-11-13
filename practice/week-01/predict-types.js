@@ -10,7 +10,7 @@ console.log(typeof "25");
 
 // Prediction: null
 console.log(typeof null);
-//Actual: object
+//Actual: object - js bug that wasn't fixed
 
 // Prediction: 30
 console.log(Number("25") + 5);
@@ -46,7 +46,10 @@ console.log("10" > "9");
 
 // Prediction: false
 console.log(null == undefined);
-//Actual: true - 
+//Actual: true - equality for this returns true immediately
 
 
-//Rule I learned: == is a loose equality, it checks that the value is the same whereas === also checks at the type
+/*Rule I learned: == is a loose equality, it converts both values to the same type before comparing
+ === compares without doing the type conversion
+== should be used when we only care about the value, and === when we also care about the type
+*/
